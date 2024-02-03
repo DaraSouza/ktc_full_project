@@ -76,6 +76,29 @@ def mystical_cave():
     else:
         print(Fore.RED + "An evil witch casts a spell on you but a kind fair helps you up.")
 
+def river_crossing():
+    print(Fore.BLACK + "You reach a wide river blocking your way.")
+    time.sleep(1)
+
+    choice = make_choice(Fore.CYAN + "How do you cross it?", ["Build a raft", "Swim across"], [1, -1])
+    time.sleep(1)
+
+    if choice == 1: 
+        print(Fore.GREEN + "Great idea! You successfully build a raft and cross the river")
+    else:
+        print(Fore.RED + "Oh no! Swimming across was a bad idea. You struggle but manage to reach the other side")
+
+def hidden_treasure():
+    print(Fore.BLACK + "You stumble upon a hidden treasure chest.")
+    time.sleep(1)
+
+    choice = make_choice(Fore.CYAN + "What do you do?", ["Open the chest", "Leave it alone"], [1, -1])
+    time.sleep(1)
+
+    if choice == 1: 
+        print(Fore.GREEN + "Congratulations! You find valuable treasures inside the chest.")
+    else:
+        print(Fore.RED + "You decide to leave the chest untouched.")
 
 
 def play_game():
@@ -85,6 +108,8 @@ def play_game():
     forest_path()
     mountain_climb()
     mystical_cave()
+    river_crossing()
+    hidden_treasure()
 
 if __name__ == "__main__":
     play_game()
