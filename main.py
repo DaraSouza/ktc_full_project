@@ -64,12 +64,27 @@ def mountain_climb():
     else:
         print(Fore.RED + "Uh-oh! Climbing without equipment is risky. You slip, but luckily, you catch yourself")
 
+def mystical_cave():
+    print(Fore.BLACK + "You discover a mystical cave filled with glowing crystals.")
+    time.sleep(1)
+
+    choice = make_choice(Fore.CYAN + "What do you do?", ["Enter a cave", "Continue with journey"], [1, -1])
+    time.sleep(1)
+
+    if choice == 1: 
+        print(Fore.GREEN + "The cave is enchanted! You gain magical powers.")
+    else:
+        print(Fore.RED + "An evil witch casts a spell on you but a kind fair helps you up.")
+
+
+
 def play_game():
     introduction()
 
     # Start of the adventure
     forest_path()
     mountain_climb()
+    mystical_cave()
 
 if __name__ == "__main__":
     play_game()
