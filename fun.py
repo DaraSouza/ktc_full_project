@@ -7,6 +7,25 @@ init(autoreset = True)
 
 player_score = 0
 
+def make_choice(question, options, score_change):
+    print(Fore.MAGENTA + Style.DIM + question)
+    for i, option in enumerate(options, 1):
+        print(f"{i}.{option}")
+
+    while True:
+        try:
+            choice = int(input(Fore.CYAN + Style.DIM + "Enter the number of your choice: "))
+            if 1 <= choice <= len(options):
+                # Update global score variable
+                global player_score
+                player_score += score_change[choice - 1]
+                return choice
+            else:
+                print(Fore.RED + Style.BRIGHT + "Invalid choice! Try again")
+        except ValueError:
+            print(Fore.LIGHTRED_EX + Style.DIM + "Invalid input. Enter a number.")
+
+
 def valentine_day():
     print("Welcome to the internet!")
     time.sleep(1)
@@ -39,6 +58,8 @@ def valentine_day():
 
     print("Mimii alert: Have fun now!")
     time.sleep(1)
+
+
 
     question = ("Valentine's day was named after a saint, yes or no? ", ["Yes", "No"], [1, -1])
     if question == 1: 
